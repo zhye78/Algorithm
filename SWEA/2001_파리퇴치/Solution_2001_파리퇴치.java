@@ -41,5 +41,4 @@ public class Solution_2001_파리퇴치 {
 			
 		} //for testCase
 	} //main
-
 }
