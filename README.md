@@ -1,4 +1,4 @@
-## 데일리 알고리즘 풀이📖📖
+## 📖데일리 알고리즘 풀이📖
 1. Software Expert Academy
 2. Baekjoon
 3. Programmers
