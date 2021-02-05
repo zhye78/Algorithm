@@ -19,23 +19,25 @@ public class Solution_1859_백만장자프로젝트 {
 				prices[i] = Integer.parseInt(st.nextToken());
 
 			int count = 0; //소비한 개수
-			int purchase = 0; //소비
-			int total = 0;
-			for(int i=0; i<day; i++) {
-				if(i == day-1) {
-					total += prices[i] * count - purchase;
-					break;
-				}
-				if(prices[i] <= prices[i+1]) {
+			int maxVal = prices[day-1]; //max값을 맨 뒤 값으로 초기화
+			long purchase = 0; //소비
+			long total = 0;
+			for(int i=day-2; i>=0; i--) {
+				if(prices[i] <maxVal) {
 					purchase += prices[i];
 					count++;
 				}else {
-					total += prices[i] * count - purchase;
-					purchase = 0;
+					total += maxVal * count - purchase;
+					//System.out.println(maxVal+" "+count+" "+purchase);
+					//System.out.println("total: " + total);
+					maxVal = prices[i];
 					count = 0;
+					purchase = 0;
 				}
 			}
-			
+			//System.out.println(maxVal+" "+count+" "+purchase);
+			//System.out.println("total: " + total);
+			total += maxVal * count - purchase;
 			System.out.println("#" + tc + " " + total);
 		}
 	}
